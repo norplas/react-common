@@ -9,9 +9,8 @@ export const handleResponse = (response) => {
     }
     return response
         .text()
-        .then((text) => {
-            return JSON.parse(text.replace(/<[^>]*>/gi, ''));
-        })
+        .then((text) => JSON.parse(text.replace(/<[^>]*>/gi, '')))
+
         .then((result) => {
             if (result.d) {
                 return JSON.parse(result.d);
