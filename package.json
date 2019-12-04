@@ -13,7 +13,6 @@
     "build": "npm-run-all -p clean build-js",
     "codecov": "codecov",
     "commit": "npx git-cz",
-    "commitmsg": "commitlint -E $GIT_PARAMS",
     "gc": "commit",
     "lint": "eslint --ext .js,.jsx .",
     "prepare": "npm run build",

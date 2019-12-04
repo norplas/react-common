@@ -3,7 +3,7 @@
   "hooks": {
     "pre-commit": "npm run lint",
    // "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
-    "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
+    "commit-msg": "commitlint --edit $GIT_PARAMS",
     "pre-push": "npm run test"
   }
 }
