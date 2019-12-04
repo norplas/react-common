@@ -1,5 +1,5 @@
 # example-rollup-react-component-npm-package
-
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/example-rollup-react-component-npm-package.svg)](https://greenkeeper.io/)
 
 [![Build Status](https://travis-ci.org/jaebradley/example-rollup-react-component-npm-package.svg?branch=master)](https://travis-ci.org/jaebradley/example-rollup-react-component-npm-package)

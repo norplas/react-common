@@ -14,7 +14,8 @@ module.exports = exports = {
         "comma-dangle": OFF,
         "react/jsx-indent": OFF,
         "react/jsx-indent-props": OFF,
-        "react/jsx-curly-spacing": OFF
+        "react/jsx-curly-spacing": OFF,
+        "react/jsx-filename-extension": OFF
 
     },
     "env": {
