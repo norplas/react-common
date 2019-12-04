@@ -15,7 +15,8 @@ module.exports = exports = {
         "react/jsx-indent": OFF,
         "react/jsx-indent-props": OFF,
         "react/jsx-curly-spacing": OFF,
-        "react/jsx-filename-extension": OFF
+        "react/jsx-filename-extension": OFF,
+        "import/extensions": OFF
 
     },
     "env": {
