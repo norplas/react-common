@@ -1,9 +1,9 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 // const FONT_COLOR='#dedede';
 const FONT_COLOR = '#888b8d';
 
-const headerData = [
+const largeHeaderData = [
     {
         d:
             'M181.1,42.6h38l14,53h0.9c0.7-4.4,1.3-9.1,2.6-13.4l11.5-39.6h37.6l16.7,100.8h-35.7l-5-55.2h-0.7 c-0.7,3.3-1.3,6.8-2.4,10l-14.7,45.2h-21.6l-13.2-42.7c-1.1-4.3-2-8.3-2.3-12.6h-1.2c-0.3,4-0.5,8.2-0.9,12.2l-4.3,43.1h-35.7 L181.1,42.6z',
@@ -18,7 +18,10 @@ const headerData = [
         d:
             'M646.7,143.4h-39.1l35.3-100.8h40.9L720,143.4h-39.1l-3.4-12.6h-27.9L646.7,143.4z M671.1,106.9l-4.3-17.8 c-1.1-4.3-1.7-8.7-2.4-13H663l-6.7,30.8H671.1z',
         color: FONT_COLOR
-    },
+    }
+
+];
+const headerData = [
     {
         d:
             'M82.3,0C72,0,63.7,8.3,63.7,18.5c0,10.2,8.3,18.5,18.6,18.5c10.3,0,18.6-8.3,18.6-18.5 C100.9,8.3,92.6,0,82.3,0',
@@ -31,11 +34,14 @@ const headerData = [
     }
 ];
 
-const Logo = () => {
+const Logo = ({ small }) => {
     // eslint-disable-next-line no-undef
     const { innerWidth } = window;
     const width = innerWidth === 768 ? 20 : 145;
     const viewBox = innerWidth === 768 ? '0 0 150 145' : '0 0 720 145';
+    if (!small) {
+        largeHeaderData.forEach((path) => headerData.unshift(path));
+    }
     return (
         <svg
             style={ { marginTop: '5px' } }
@@ -53,5 +59,11 @@ const Logo = () => {
         </svg>
     );
 };
+Logo.propTypes = {
+    small: PropTypes.bool
+};
 
+Logo.defaultProps = {
+    small: false
+};
 export default Logo;
