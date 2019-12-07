@@ -40,7 +40,9 @@ const Logo = ({ small }) => {
     const width = innerWidth === 768 ? 20 : 145;
     const viewBox = innerWidth === 768 ? '0 0 150 145' : '0 0 720 145';
     if (!small) {
-        largeHeaderData.forEach((path) => headerData.unshift(path));
+        headerData.splice(0, 0, largeHeaderData[0]);
+        headerData.splice(1, 0, largeHeaderData[1]);
+        headerData.splice(2, 0, largeHeaderData[2]);
     }
     return (
         <svg
