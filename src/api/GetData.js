@@ -1,5 +1,4 @@
 import fetch from 'node-fetch';
-import axios from axios;
 import {
     defaultOptions
 } from './defaultOptions';
@@ -19,10 +18,6 @@ const GetData = async (path, opts = defaultOptions) => {
     if (!Object.keys(opts).includes('body')) {
         opts = createOptions(opts);
     }
-
-    const response = await axios(`${path}`, opts);
-
-
 
     return fetch(`${path}`, opts)
         .then(handleResponse)
