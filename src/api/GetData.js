@@ -1,17 +1,27 @@
 import fetch from 'node-fetch';
-import { defaultOptions } from './defaultOptions';
-import { handleResponse } from './handleResponse';
-import { createOptions } from './createOptions';
+import axios from axios;
+import {
+    defaultOptions
+} from './defaultOptions';
+import {
+    handleResponse
+} from './handleResponse';
+import {
+    createOptions
+} from './createOptions';
 
 /**
  * Fetch Data from URL
  * @param {string} path
  * @param {Object} opts
  */
-const GetData = (path, opts = defaultOptions) => {
+const GetData = async (path, opts = defaultOptions) => {
     if (!Object.keys(opts).includes('body')) {
         opts = createOptions(opts);
     }
+
+    const response = await axios(`${path}`, opts);
+
 
 
     return fetch(`${path}`, opts)
