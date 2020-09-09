@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch, { RequestInit } from 'node-fetch';
 import { defaultOptions } from './defaultOptions';
 import { handleResponse } from './handleResponse';
 import { createOptions } from './createOptions';
@@ -8,7 +8,7 @@ import { createOptions } from './createOptions';
  * @param {string} path
  * @param {Object} opts
  */
-const GetData = (path, opts = defaultOptions) => {
+const GetData = (path: String, opts: RequestInit | any = defaultOptions) => {
     if (!Object.keys(opts).includes('body')) {
         opts = createOptions(opts);
     }

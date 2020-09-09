@@ -33,8 +33,10 @@ const headerData = [
         color: '#0D0105'
     }
 ];
-
-const Logo = ({ small }) => {
+interface ILogo {
+    small: boolean
+}
+const Logo = ({ small }: ILogo) => {
     // eslint-disable-next-line no-undef
     const { innerWidth } = window;
     const width = innerWidth === 768 ? 20 : 145;
@@ -46,18 +48,18 @@ const Logo = ({ small }) => {
     }
     return (
         <svg
-            style={ { marginTop: '5px' } }
+            style={{ marginTop: '5px' }}
             height="30"
             role="img"
-            viewBox={ viewBox }
-            width={ width }
+            viewBox={viewBox}
+            width={width}
             xmlns="http://www.w3.org/2000/svg"
         >
             <title>Magna International</title>
-            { headerData.map(({ d, color }, idx) => {
+            {headerData.map(({ d, color }, idx) => {
                 const key = `${idx}`;
-                return <path key={ key } d={ d } fill={ color } />;
-            }) }
+                return <path key={key} d={d} fill={color} />;
+            })}
         </svg>
     );
 };
