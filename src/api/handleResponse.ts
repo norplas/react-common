@@ -1,9 +1,9 @@
-import { Response } from 'node-fetch'
+import { Response } from 'node-fetch';
 /**
  *
  * @param {HTTPResponse} response
  */
-export const handleResponse = (response: Response) => {
+export const handleResponse = (response: Response): Promise<string> => {
     if (!response.ok) {
         console.error(response);
     }

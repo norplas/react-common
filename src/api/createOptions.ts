@@ -1,4 +1,4 @@
-import { RequestInit } from 'node-fetch'
+import { RequestInit } from 'node-fetch';
 /**
  * Creates options for pos
  * @param {Object} body

@@ -36,7 +36,8 @@ const headerData = [
 interface ILogo {
     small: boolean
 }
-const Logo = ({ small }: ILogo) => {
+
+const Logo = ({ small }: ILogo): any => {
     // eslint-disable-next-line no-undef
     const { innerWidth } = window;
     const width = innerWidth === 768 ? 20 : 145;
