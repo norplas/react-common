@@ -1,0 +1,35 @@
+{
+    // WARN = 1
+    // OFF = 0
+    // ERROR=2
+
+    "plugins": [
+
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "airbnb",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "linebreak-style": "off",
+        "indent": [1, 4],
+        "no-param-reassign": "off",
+        "no-console": 0,
+        "import/prefer-default-export": 0,
+        "comma-dangle": 0,
+        "react/jsx-indent": 0,
+        "react/jsx-indent-props": 0,
+        "react/jsx-curly-spacing": 0,
+        "react/jsx-filename-extension": 0,
+        "import/extensions": 0,
+        "import/no-unresolved": 0,
+        "no-use-before-define": 0
+
+    },
+    "env": {
+        "jest": true
+    }
+}
