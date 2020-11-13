@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://norplas.visualstudio.com/react-common/_workitems/recentlyupdated/"
   },
-  "homepage": "hhttps://norplas.visualstudio.com/react-common",
+  "homepage": "https://norplas.visualstudio.com/react-common",
   "publishConfig": {
     "access": "public"
   },
@@ -43,8 +43,10 @@
   ],
   "author": "Charles.Berman@Magna.com",
   "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
   "peerDependencies": {
-    "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0"
   },
