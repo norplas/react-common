@@ -1,6 +1,6 @@
 {
   "name": "norplas-react-common",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Common React modules for use within norplas.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
