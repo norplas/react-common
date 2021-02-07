@@ -16,19 +16,20 @@ const useVersion = (callback: (value: String) => void, name: String) => {
 
     // Setup the listener;
     useEffect(() => {
-        debugger;
-        const io = socket('https://zncwafcnor1.azurewebsites.net/version');
-        io.on('update', (value: String) => {
-            debugger;
+
+        const handleUpdate = (value: String) => {
             if (name === value) {
                 if (savedCallback.current != null) {
                     savedCallback.current(value);
                 }
             }
-        });
+        }
+        const io = socket('https://zncwafcnor1.azurewebsites.net/version');
+        io.on('update', handleUpdate);
         io.connect();
         return () => {
-
+            io.off('update', handleUpdate);
+            io.disconnect();
         }
 
     }, [name])
