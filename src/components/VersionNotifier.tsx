@@ -3,11 +3,24 @@ import { SnackbarProvider, useSnackbar } from 'notistack';
 import useVersion from './useVersion';
 
 
-const Content = ({ name, children }: any) => {
+const defaultOptions ={
+    persist:true,
+    anchorOrigin:{
+        vertical:top,
+        horizontal:'center'
+    }
+} 
+
+const Content = ({ name, children,...otherProps }: any) => {
     const { enqueueSnackbar } = useSnackbar();
 
     const handleUpdate = (value: String) => {
-        enqueueSnackbar(`There is a new version of ${value}, please refresh your browser`, { persist: true });
+
+        const options = {
+            ...defaultOptions,
+            ...otherProps
+        }
+        enqueueSnackbar(`There is a new version of ${value}, please refresh your browser`, options);
     }
 
     useVersion(handleUpdate, name);
