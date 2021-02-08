@@ -16,7 +16,7 @@ const getNotifyOptions=(options:NotifyOptions)=>{
         preventDuplicate:options.preventDuplicate||true,
         variant:options.variant||'error',
         anchorOrigin:{
-            vertical:options.vertical||'top',
+            vertical:options.vertical||'bottom',
             horizontal:options.horizontal||'center'
         }
     };
