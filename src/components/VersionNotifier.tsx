@@ -5,6 +5,7 @@ import useVersion from './useVersion';
 
 
 export interface NotifyOptions extends OptionsObject {
+    hideIconVariant?:Boolean|undefined,
     vertical?:"top"|'bottom'|undefined,
     horizontal?:"left"|'center'|'right'|undefined 
 }
@@ -13,8 +14,10 @@ const getNotifyOptions=(options:NotifyOptions)=>{
     
     let result = {
         persist:options.persist||true,
+
         preventDuplicate:options.preventDuplicate||true,
         variant:options.variant||'error',
+        hideIconVariant:options.hideIconVariant||true,
         anchorOrigin:{
             vertical:options.vertical||'bottom',
             horizontal:options.horizontal||'center'
@@ -29,6 +32,7 @@ const defaultProps = {
     persist:true,
     preventDuplicate:true,
     variant:'error',
+    hideIconVariant:true,
     anchorOrigin:{
         vertical:'bottom',
         horizontal:'center'
