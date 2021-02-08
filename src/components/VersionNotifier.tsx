@@ -1,38 +1,44 @@
 import React from 'react';
-import { SnackbarProvider, useSnackbar } from 'notistack';
+import { SnackbarProvider, useSnackbar,OptionsObject,SnackbarOrigin } from 'notistack';
 import useVersion from './useVersion';
 
 
-const getNotifyOptions=(options:any)=>{
+
+export interface NotifyOptions extends OptionsObject {
+    vertical?:"top"|'bottom'|undefined,
+    horizontal?:"left"|'center'|'right'|undefined 
+}
+
+const getNotifyOptions=(options:NotifyOptions)=>{
     
     let result = {
-        persist:options.persists||true,
+        persist:options.persist||true,
         preventDuplicate:options.preventDuplicate||true,
         variant:options.variant||'error',
         anchorOrigin:{
             vertical:options.vertical||'top',
-            horizontal:options.center||'center'
+            horizontal:options.horizontal||'center'
         }
     };
 
   return result;
 }
- 
+  
 
-const Content = ({ name, children,...otherProps }: any) => {
+const Content = ({ name, children,options  }: any) => {
     const { enqueueSnackbar } = useSnackbar();
 
 
 
 
-    let options = getNotifyOptions(otherProps);
+    let optionProps = getNotifyOptions(options);
 
     console.log(options);
     const handleUpdate = (value: String) => {
 
         
 
-        enqueueSnackbar(`There is a new version of ${value}, please refresh your browser`, options);
+        enqueueSnackbar(`There is a new version of ${value}, please refresh your browser`, optionProps);
     }
 
     useVersion(handleUpdate, name);
