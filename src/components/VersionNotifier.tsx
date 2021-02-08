@@ -25,7 +25,17 @@ const getNotifyOptions=(options:NotifyOptions)=>{
 }
   
 
-const Content = ({ name, children,options  }: any) => {
+const defaultProps = {
+    persist:true,
+    preventDuplicate:true,
+    variant:'error',
+    anchorOrigin:{
+        vertical:'bottom',
+        horizontal:'center'
+    }
+}
+
+const Content = ({ name, children,options=defaultProps  }: any) => {
     const { enqueueSnackbar } = useSnackbar();
 
 
