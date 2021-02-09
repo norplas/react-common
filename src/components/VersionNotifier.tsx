@@ -1,45 +1,45 @@
 import React from 'react';
-import { SnackbarProvider, useSnackbar,OptionsObject,SnackbarOrigin } from 'notistack';
+import { SnackbarProvider, useSnackbar, OptionsObject } from 'notistack';
 import useVersion from './useVersion';
 
 
 
 export interface NotifyOptions extends OptionsObject {
-    hideIconVariant?:Boolean|undefined,
-    vertical?:"top"|'bottom'|undefined,
-    horizontal?:"left"|'center'|'right'|undefined 
+    hideIconVariant?: Boolean | undefined,
+    vertical?: "top" | 'bottom' | undefined,
+    horizontal?: "left" | 'center' | 'right' | undefined
 }
 
-const getNotifyOptions=(options:NotifyOptions)=>{
-    
-    let result = {
-        persist:options.persist||true,
+const getNotifyOptions = (options: NotifyOptions) => {
 
-        preventDuplicate:options.preventDuplicate||true,
-        variant:options.variant||'error',
-        hideIconVariant:options.hideIconVariant||true,
-        anchorOrigin:{
-            vertical:options.vertical||'bottom',
-            horizontal:options.horizontal||'center'
+    let result = {
+        persist: options.persist || true,
+
+        preventDuplicate: options.preventDuplicate || true,
+        variant: options.variant || 'error',
+        hideIconVariant: options.hideIconVariant || true,
+        anchorOrigin: {
+            vertical: options.vertical || 'bottom',
+            horizontal: options.horizontal || 'center'
         }
     };
 
-  return result;
+    return result;
 }
-  
+
 
 const defaultProps = {
-    persist:true,
-    preventDuplicate:true,
-    variant:'error',
-    hideIconVariant:true,
-    anchorOrigin:{
-        vertical:'bottom',
-        horizontal:'center'
+    persist: true,
+    preventDuplicate: true,
+    variant: 'error',
+    hideIconVariant: true,
+    anchorOrigin: {
+        vertical: 'bottom',
+        horizontal: 'center'
     }
 }
 
-const Content = ({ name, children,options=defaultProps  }: any) => {
+const Content = ({ name, children, options = defaultProps }: any) => {
     const { enqueueSnackbar } = useSnackbar();
 
 
@@ -50,7 +50,7 @@ const Content = ({ name, children,options=defaultProps  }: any) => {
     console.log(options);
     const handleUpdate = (value: String) => {
 
-        
+
 
         enqueueSnackbar(`There is a new version of ${value}, please refresh your browser`, optionProps);
     }
