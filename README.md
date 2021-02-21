@@ -1,12 +1,6 @@
-# example-rollup-react-component-npm-package
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/example-rollup-react-component-npm-package.svg)](https://greenkeeper.io/)
-
-[![Build Status](https://travis-ci.org/jaebradley/example-rollup-react-component-npm-package.svg?branch=master)](https://travis-ci.org/jaebradley/example-rollup-react-component-npm-package)
-[![npm](https://img.shields.io/npm/dt/@jaebradley/example-rollup-react-component-npm-package.svg)](https://www.npmjs.com/package/@jaebradley/example-rollup-react-component-npm-package)
-[![npm](https://img.shields.io/npm/v/@jaebradley/example-rollup-react-component-npm-package.svg)](https://www.npmjs.com/package/@jaebradley/example-rollup-react-component-npm-package)
-
-Example `React` component "library" using [`rollup`](https://github.com/rollup/rollup) that is published to `npm`.
+# Norplas React Common
+ 
+[![npm-publish](https://github.com/norplas/react-common/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/norplas/react-common/actions/workflows/npm-publish.yml)  
 
 ## `rollup` and `webpack`
 
