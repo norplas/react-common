@@ -35,9 +35,7 @@ export type LogoType = {
 
 const Logo = ({ small, color: font_color = FONT_COLOR, ...otherProps }: LogoType) => {
     // eslint-disable-next-line no-undef
-    const { innerWidth } = window;
 
-    const width = innerWidth === 768 ? 20 : 145;
     const viewBox = small ? '0 0 150 145' : '0 0 720 145';
 
     return (
