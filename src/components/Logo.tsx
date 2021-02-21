@@ -1,4 +1,4 @@
-import React,{useEffect,useMemo} from 'react';
+import React from 'react';
 
 // const FONT_COLOR='#dedede';
 const FONT_COLOR = '#888b8d'; 
@@ -24,11 +24,7 @@ const headerData = [
     }
 ];
 
-
-interface HeaderProp {
-    d:string;
-    color:string;
-}
+ 
 
 
 
