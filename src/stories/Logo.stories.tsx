@@ -5,10 +5,10 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import LogoComponent, { LogoType } from '../components/Logo';
 
 export default {
-  title: 'Example/Logo',
+  title: 'Components/Logo',
   component: LogoComponent,
-  argTypes:{
-      color: {control:'color'}
+  argTypes: {
+    color: { control: 'color' }
   }
 } as Meta;
 
@@ -16,6 +16,5 @@ const Template: Story<LogoType> = (args) => <LogoComponent {...args} />;
 
 export const Logo = Template.bind({});
 Logo.args = {
-  color:'#FF00FF'
+  color: '#d3d3d3'
 };
- 
