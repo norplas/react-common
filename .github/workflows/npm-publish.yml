@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master # Change this to your default branch
+    tags:        
+      - v1.*           # Push events to v1.0, v1.1, and v1.9 tags      
 jobs:
   build:
     name: build
