@@ -4,6 +4,20 @@ on:
     branches:
       - master # Change this to your default branch
 jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x,14.x]
+    steps:
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    # - run: npm ci --if-present
+    - run: npm run build --if-present
+    - run: npm test
   npm-publish:
     name: npm-publish
     runs-on: ubuntu-latest
