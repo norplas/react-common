@@ -31,10 +31,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      with:
-        node-version: 12.x
-        registry-url: 'https://registry.npmjs.org'
-        create_tag: "true"
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: 'https://registry.npmjs.org'
+          create_tag: "true"
+        - run: yarn publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
