@@ -1,8 +1,8 @@
 name: npm-publish
-on:
-  create:
-    tags:
-      - v*
+# on:
+#   create:
+#     tags:
+#       - v*
 jobs:
   build:
     name: build
@@ -25,15 +25,16 @@ jobs:
         npm test
       env:
         CI: true
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Publish new version to NPM
-      uses: actions/setup-node@v1
+  publish:
+    needs: build
+    name: Publish new version to NPM
+    runs-on: ubuntu-latest
+    
+    steps:
       with:
         node-version: 12.x
         registry-url: 'https://registry.npmjs.org'
         create_tag: "true"
-    - run: yarn publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
