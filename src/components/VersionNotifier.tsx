@@ -41,10 +41,6 @@ const defaultProps = {
 
 const Content = ({ name, children, options = defaultProps }: any) => {
     const { enqueueSnackbar } = useSnackbar();
-
-
-
-
     let optionProps = getNotifyOptions(options);
 
     console.log(options);

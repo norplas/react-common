@@ -33,7 +33,7 @@ export type LogoType = {
     color?: string | undefined
 }
 
-const Logo = ({ small, color: font_color = FONT_COLOR, ...otherProps }: LogoType) => {
+export const Logo = ({ small, color: font_color = FONT_COLOR, ...otherProps }: LogoType) => {
     // eslint-disable-next-line no-undef
 
     const viewBox = small ? '0 0 150 145' : '0 0 720 145';
